@@ -116,7 +116,7 @@ app
         return next(error)
     }
 
-    const taskId = req.params.id;
+    const taskId = Number(req.params.id);
     const taskIndex = tasks.findIndex((task) => task.id === taskId);
 
     if (taskIndex === -1) {
@@ -146,7 +146,7 @@ app
     }
 
 
-    const taskId = req.params.id;
+    const taskId = Number(req.params.id);
     const taskIndex = tasks.findIndex((task) => task.id === taskId);
 
     if (taskIndex === -1) {
