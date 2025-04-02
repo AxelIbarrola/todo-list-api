@@ -18,6 +18,7 @@
   "homepage": "https://github.com/AxelIbarrola/To-Do-List#readme",
   "description": "",
   "dependencies": {
+    "dotenv": "^16.4.7",
     "express": "^5.1.0"
   }
 }
