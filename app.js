@@ -9,16 +9,6 @@ const { validateTaskId, validateTaskFields, validateUpdateTasks } = require('./m
 
 app.use(express.json());
 
-app.use(
-    (err, req, res, next) => {
-        console.error(err.stack);
-        res.status(err.status || 500).json({
-            error: err.message || 'Internal Server Error',
-            details: err.details || null
-        })
-    }
-  )
-
 let tasks = [];
 
 app.listen(PORT, () =>
@@ -152,3 +142,13 @@ app
     tasks.splice(taskIndex, 1);
     res.status(200).json({ message: "Task deleted successfully" });
   });
+
+  app.use(
+    (err, req, res, next) => {
+        console.error(err.stack);
+        res.status(err.status || 500).json({
+            error: err.message || 'Internal Server Error',
+            details: err.details || null
+        })
+    }
+  )
