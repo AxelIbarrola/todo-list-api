@@ -1,8 +1,11 @@
 const express = require("express");
 const app = express();
+
 require("dotenv").config();
 const PORT = process.env.PORT || 3000;
-const { param, body, validationResult } = require("express-validator");
+
+const {  validationResult } = require("express-validator");
+const { validateTaskId, validateTaskFields, validateUpdateTasks } = require('./middlewares/validators')
 
 app.use(express.json());
 
@@ -40,12 +43,6 @@ app.get("/search", (req, res) => {
   res.send(`Resultado de búsqueda para: ${query}`);
 });
 
-const validateTaskId = param('id').toInt().isInt().withMessage('Task ID must be a valid number.')
-const validateTaskFields = [
-    body('title').notEmpty().withMessage('Title is required.'),
-    body('description').notEmpty().isLength({ min: 10}).withMessage('Description is required.')
-
-]
 
 app.route("/tasks")
   .get((req, res) => {
@@ -101,10 +98,7 @@ app
 
     res.json(task);
   })
-  .put([validateTaskId,
-    body('title').optional().isLength({ min: 5 } ).withMessage('Title must be at least 5 characters long.'),
-    body('description').optional().isLength({ min: 10 } ).withMessage('Description must be at least 10 characters long.')
-  ],
+  .put([validateTaskId, validateUpdateTasks],
     (req, res, next) => {
 
     const errors =  validationResult(req)
