@@ -1,4 +1,4 @@
-const { validationResult } = require('express')
+const { validationResult } = require('express-validator')
 
 const handleValidation = (req, res, next) => {
     const errors = validationResult(req)
@@ -8,7 +8,7 @@ const handleValidation = (req, res, next) => {
         error.status = 400
         error.details = errors.array()
 
-        return next(next)
+        return next(error)
     }
 
     next()

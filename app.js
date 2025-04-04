@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
   res.send("¡Bienvenido a mi servidor Express!");
 });
 
-app.use('/tasks' ,taskRoutes)
+app.use('/tasks', taskRoutes)
 
 app.use(
   (err, req, res, next) => {
