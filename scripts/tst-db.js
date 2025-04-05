@@ -6,7 +6,9 @@ const sequelize = require('../config/database')
         console.log('✅ Connection has been established successfully.')
     }catch (error) {
         console.error(`❌ Connection error with the database: ${error}`);
+    } finally {
+        await sequelize.close();
+        console.log('Connection close')
     }
 }
-
 )();
