@@ -1,5 +1,6 @@
 require('dotenv').config()
 
+// Importamos Task para que sequelize lo registre a la hora de sincronizar
 const Task = require('../models/Task')
 const { sequelize } = require('../config/database')
 
