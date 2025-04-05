@@ -14,7 +14,9 @@ Este proyecto es una **API RESTful** para gestionar tareas, construida con fines
 ```markdown
 ## 📂 Estructura del proyecto
 ```
-To-Do-List/ │ ├── models/ # Modelos Sequelize ├── routes/ # Rutas Express ├── middlewares/ # Validaciones personalizadas ├── scripts/ # Script de sincronización con la base de datos ├── config/ # Configuración de Sequelize ├── .env # Variables de entorno └── app.js # Archivo principal del servidor
+To-Do-List/ │ ├── models/ # Modelos Sequelize ├── routes/ # Rutas Express ├── middlewares/ # 
+Validaciones personalizadas ├── scripts/ # Script de sincronización con la base de datos ├── config/ # 
+Configuración de Sequelize ├── .env # Variables de entorno └── app.js # Archivo principal del servidor
 ```
 
 ```
