@@ -4,16 +4,18 @@ const Task = require('../models/Task')
 const { sequelize } = require('../config/database')
 
 ( async () => {
+
+    let exitCode = 0;
     try{
         await sequelize.sync();
         console.log('✅ Successful synchronized tables.')
     } catch(err) {
         console.error(`❌ Synchronization error with tables: ${err}`)
-        process.exit(1)
+        exitCode = 1;
     } finally {
         await sequelize.close()
         console.log('🔒 Connection closed.')
-        process.exit(0)
+        process.exit(exitCode)
     }
 }
 )();
