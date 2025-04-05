@@ -11,18 +11,6 @@ Este proyecto es una **API RESTful** para gestionar tareas, construida con fines
 + express-validator
 + Postman
 
-## 📂 Estructura del proyecto
-
-  To-Do-List/
-│
-├── models/           # Modelos Sequelize
-├── routes/           # Rutas Express
-├── middlewares/      # Validaciones personalizadas
-├── scripts/          # Script de sincronización con la base de datos
-├── config/           # Configuración de Sequelize
-├── .env              # Variables de entorno
-└── app.js            # Archivo principal del servidor
-
 ## 🛠️ Aprendizajes
 
 - ✅ Express.js
@@ -91,9 +79,9 @@ Este proyecto es una **API RESTful** para gestionar tareas, construida con fines
         npm start
     ```
 
-### Cómo probar la API
+### 🎫 Cómo probar la API
 
-    Una vez que el servidor esté corriendo, podés hacer peticiones HTTP a los endpoints usando cualquier cliente HTTP, como:
+  Una vez que el servidor esté corriendo, podés hacer peticiones HTTP a los endpoints usando cualquier cliente HTTP, como:
 
 + [Postman](https://www.postman.com/downloads/)
 
@@ -107,10 +95,11 @@ Este proyecto es una **API RESTful** para gestionar tareas, construida con fines
 
 1. Ejemplo de petición **POST** a `/task`
 
-    ```json
+    ```bash
     POST /tasks
     Content-Type: application/json
-
+    ```
+    ```json
     {   
     "title": "Aprender Express",
     "description": "Crear una API RESTful con validaciones"
