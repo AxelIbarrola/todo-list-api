@@ -44,7 +44,7 @@ Este proyecto es una **API RESTful** para gestionar tareas, construida con fines
 1. **Cloná el repositorio:**
 
    ```bash
-   git clone https://github.com/AxelIbarrola/todo-list-api
+   git clone https://github.com/AxelIbarrola/todo-list-api.git
    cd todo-list-api
    ```
 
